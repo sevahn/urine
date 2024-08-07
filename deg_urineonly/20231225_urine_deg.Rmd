@@ -1,0 +1,285 @@
+---
+sevahn vorperian
+quake lab
+urine cellular (sediment) vs cell-free (supernatant) differential expression
+"Multiomics characterization of cell type repertoires for urine liquid biopsies"
+---
+
+
+```{r}
+library(edgeR)
+library(ggplot2)
+library(limma)
+#library(Glimma)
+```
+
+```{r}
+fsave_path = '../data/diffex/urine_only/'
+```
+
+
+```{r}
+counts <- read.csv("../../data/20231228_filtered_sed_supt_urineONLY.csv",
+                                      header = TRUE, row.names = 2)
+
+meta <- read.csv("../../data/diffex/urine_only_meta_diffex.csv",
+                 header = TRUE)
+
+# drop the gene names; have Ensembl ID only
+gene_names <- counts[,1]
+counts <- counts[, 2:ncol(counts)]
+```
+
+```{r}
+dge <- DGEList(counts = counts)
+```
+
+```{r}
+max(dge$samples$lib.size) / min(dge$samples$lib.size)
+# appropriate to do voom with quality weights
+```
+
+
+```{r}
+
+# knit sample type and stone to a single factor
+biofluid_leuks <- paste0(meta$sample_type, "_", meta$leuks)
+targets <- as.data.frame(biofluid_leuks)
+
+targets$biofluid_leuks <- factor(targets$biofluid_leuks)
+targets$sample_id = factor(meta$patient_id)
+
+targets$volume = meta$vol_samps
+targets$volume = as.integer(targets$volume)
+
+targets$stone_normal = meta$stone_normal
+targets$creatinine = meta$creatinine
+targets$seq_batch = seq_batch
+targets$sex = factor(meta$sex)
+
+
+design <- model.matrix(~0 + targets$biofluid_leuks + targets$volume + targets$stone_normal + targets$creatinine + targets$sex)
+
+```
+
+
+```{r}
+colnames(design)
+```
+
+
+```{r}
+colnames(design) <- c("sediment_leukneg", "sediment_leukpos", "supt_leukneg", "supt_leukpos",
+                      "volume", 'stone_normal', 'creatinine', 'sex')
+
+```
+
+
+```{r}
+dge <- calcNormFactors(dge, method = "TMM")
+dge <- estimateDisp(dge, design, robust = TRUE)
+sqrt(dge$common.dispersion) 
+plotBCV(dge)
+```
+
+```{r}
+# save the TMM for later usage
+tmm_urine <- data.frame(dge$samples)
+#write.csv(tmm_urine, paste0(fsave_path, '20230919_urineOnly_TMM.csv'))
+#write.csv(tmm_urine, paste0(fsave_path, '20230930_urineOnly_TMM.csv'))
+write.csv(tmm_urine, paste0(fsave_path, '20231228_urineOnly_TMM.csv'))
+```
+
+
+```{r}
+vwts <- voomWithQualityWeights(counts = dge, 
+                               design = design,
+                               normalize.method = "none",
+                               method = "genebygene",
+                               plot=TRUE) # dge vs logCPM
+```
+
+
+```{r}
+# Repeated samples with different uninteresting predictors: This refers to situations where repeated samples do not have the same set of predictors in the design matrix, e.g., because some repeated samples were processed in a different batch. If the repeated samples for each blocking level have the same pattern of values for those predictors (e.g., each blocking level has one repeated sample in each of three batches), summation is still possible. However, in general, this is not the case and then duplicateCorrelation must be used.
+# https://support.bioconductor.org/p/125489/
+
+
+# duplicateCorrelation documentation: "if block is not null, this function estimates the correlation between repeated observations on the blocking variable. typicallly the blocks are biological replicates and repeated observations on the same block may be correlated... the function also returns a consensus correlation, which is a robust average of the individual correlations, intended for input to the functions such as lmFit or voom.."
+
+# For this function to return statistically useful results, there must be at least two more arrays than the number of coefficients to be estimated, i.e., two more than the column rank of design.
+# -> need to confirm that this is overall not within a given block (i think
+# it's overall)
+
+# is it correct to block on patient ID though the sample 
+corfit <- duplicateCorrelation(vwts, design, block = targets$sample_id)
+```
+
+```{r}
+corfit$consensus
+corfit$consensus.correlation
+```
+
+```{r}
+# run voomWithQualityWeights twice 
+# https://support.bioconductor.org/p/59700/
+vwts <- voomWithQualityWeights(counts = dge,
+                               design = design,
+                               normalize.method = "none",
+                               method = "genebygene",
+                               block = targets$sample_id,
+                               correlation = corfit$consensus,
+                               plot = TRUE) 
+```
+
+```{r}
+# copy page 126 of the manual
+corAgain <- duplicateCorrelation(vwts, design, block = targets$sample_id)
+print(corAgain$consensus.correlation)
+print(corAgain$cor)
+```
+
+
+```{r}
+vfit2 <- lmFit(vwts, design,
+               block = targets$sample_id,
+               correlation = corfit$consensus)
+```
+
+
+```{r}
+colnames(design)
+```
+
+```{r}
+counts
+```
+
+
+
+```{r}
+# page 50 of the manual
+
+# compare urine sediment and supernatant
+cm_urine <- makeContrasts(
+  #stone_supt_sed = sediment_stone - supt_stone,
+  #normal_supt_sed = sediment_normal - supt_normal,
+  
+  leukpos_sed_supt = sediment_leukpos - supt_leukpos,
+  leukneg_sed_supt = sediment_leukneg - supt_leukneg,
+  all_sed_supt = (sediment_leukpos + sediment_leukneg) / 2 - (supt_leukpos + supt_leukneg) / 2,
+  
+  #sediment_stone_normal = sediment_stone - sediment_normal,
+  #all_sed_supt = (sediment_stone + sediment_normal) / 2 - (supt_stone + supt_normal) / 2,
+  levels = colnames(design)
+)
+```
+
+```{r}
+# You should not use voom() together with eBayes(trend=TRUE). 
+# You should use one or the other,
+# but not both (as explained in Chapter 15 of the limma User's Guide).
+# https://support.bioconductor.org/p/98201/
+
+# limma trend - when trend = TRUE
+# apply diff sets of contrast matrices
+vfit_urine <- contrasts.fit(vfit2, cm_urine)
+
+# trend is false since this is voom and its baked in
+vfit_urine <- eBayes(vfit_urine, trend = FALSE, robust = TRUE) 
+```
+
+
+```{r}
+# do decideTests to account for MH testing on the coefficients
+# this is essentially a numeric matrix with elements -1, 0 or 1 
+# depending on whether each t-statistic is classified as significantly
+# negative, not significant or significantly positive respectively
+
+urineDecideTests <- decideTests(vfit_urine, method = "global", 
+                                adjust.method="BH", p.value = 0.05, lfc = 0)
+print(summary(urineDecideTests))
+urineDecideTests <- as.data.frame(urineDecideTests)
+```
+
+
+
+```{r}
+for (contrast_coef in colnames(vfit_urine)) {
+  print(contrast_coef)
+  res <- topTable(vfit_urine, coef = contrast_coef, sort.by="B",
+           resort.by = "logFC", p.value = Inf, number = Inf, confint = TRUE)
+  
+  # put in the same gene order as urineDecideTests
+  res <- res[row.names(urineDecideTests),]
+  upreg_index = which(urineDecideTests[, contrast_coef] == 1)
+  downreg_index = which(urineDecideTests[, contrast_coef] == -1)
+  
+  good_index <- append(upreg_index, downreg_index)
+  # subset res
+  res <- res[good_index, ]
+  
+  write_path <- paste0(fsave_path,
+                       #'20230930_', contrast_coef, '_BULKURINE_urineONLY_deg.csv')
+                       #'20231225_', contrast_coef, '_BULKURINE_urineONLY_deg.csv')
+                       '20231228_', contrast_coef, '_BULKURINE_urineONLY_deg.csv')
+  
+  write.csv(res, file = write_path)
+  
+  volcanoplot(vfit_urine, coef = contrast_coef,
+              style = 'p-value',
+              main = contrast_coef)
+  lp <- -log10(vfit_urine$p.value[,contrast_coef])
+  ord <- order(lp, decreasing = TRUE)[1:sum(res$adj.P.Val < 0.05)]
+
+  points(vfit_urine$coefficients[ord, contrast_coef], lp[ord], 
+         pch = 16, cex = 0.45, col = "#c4d8e2")
+}
+```
+
+
+```{r}
+colnames(vfit_urine)
+```
+
+
+# get the lists 
+```{r}
+designDF <- data.frame(design)
+
+sediment_leukneg_idx <- designDF[designDF$sediment_leukneg == 1,]
+sediment_leukpos_idx <- designDF[designDF$sediment_leukpos == 1,]
+
+supt_leukneg_idx <- designDF[designDF$supt_leukneg == 1,]
+supt_leukpos_idx <- designDF[designDF$supt_leukpos == 1,]
+
+sediment_leukneg_idx <- as.numeric(row.names(sediment_leukneg_idx))
+sediment_leukpos_idx <- as.numeric(row.names(sediment_leukpos_idx))
+
+supt_leukneg_idx <- as.numeric(row.names(supt_leukneg_idx))
+supt_leukpos_idx <- as.numeric(row.names(supt_leukpos_idx))
+```
+
+```{r}
+colnames(counts[, sediment_leukneg_idx])
+```
+
+
+```{r}
+paste(colnames(counts[, sediment_leukneg_idx]))
+```
+
+```{r}
+paste(colnames(counts[, sediment_leukpos_idx]))
+```
+
+```{r}
+paste(colnames(counts[, supt_leukneg_idx]))
+```
+
+```{r}
+paste(colnames(counts[, supt_leukpos_idx]))
+```
+
+
+
