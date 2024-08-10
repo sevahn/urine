@@ -1,0 +1,65 @@
+,sample1-NUSVR-nu=0.05-C=0.1,sample2-NUSVR-nu=0.05-C=0.1,sample3-NUSVR-nu=0.05-C=0.1
+adventitial cell,0.0,0.0,0.0
+cardiac muscle cell,0.0,0.0,0.0
+cell of skeletal muscle,0.0,0.0,0.0
+fibroblast/mesenchymal stem cell,0.0,0.0,0.0
+melanocyte,0.0,0.0,0.0
+mesothelial cell,0.007785692061954853,0.00785777187183905,0.0019231155040423562
+pancreatic stellate cell,0.0,0.0,0.0
+pericyte cell,0.0,0.0,0.0
+schwann cell,0.0,0.0,0.002268547105259407
+smooth muscle cell,0.0,0.0,0.0
+stromal cell,0.0,0.0,0.0
+tendon cell,0.0,0.0,0.0
+acinar cell of salivary gland/myoepithelial cell,0.0,0.0,0.0
+basal cell,0.0,0.0,0.01895902270566497
+basal cell of prostate epithelium,0.0,0.0,0.0
+bladder urothelial cell,0.0,0.0,0.01655618779572983
+ciliated cell/lung ciliated cell,0.0,0.0,0.0035504630426527756
+ciliated epithelial cell/epithelial cell of uterus,0.0,0.0,0.012622217549118745
+club cell/type i pneumocyte,0.0,0.0,0.0
+club cell of prostate epithelium/hillock cell of prostate epithelium/hillock-club cell of prostate epithelium,0.0,0.0,0.0
+duct epithelial cell/serous cell of epithelium of bronchus,0.0,0.0,0.0
+duodenum glandular cell,0.0,0.0,0.0
+enterocyte of epithelium of large intestine/enterocyte of epithelium of small intestine/intestinal crypt stem cell of large intestine/large intestine goblet cell/mature enterocyte/paneth cell of epithelium of large intestine/small intestine goblet cell,0.0,0.0,0.0024952341274846602
+goblet cell,0.0,0.0,0.0
+hepatocyte,0.0,0.0,0.0
+immature enterocyte/intestinal crypt stem cell/intestinal crypt stem cell of small intestine/transit amplifying cell of large intestine,0.0,0.0,0.0032682704426532103
+intestinal enteroendocrine cell/paneth cell of epithelium of small intestine/transit amplifying cell of small intestine,0.0,0.0,0.012798079874076426
+intestinal tuft cell,0.0,0.0,0.0035976641551495572
+intrahepatic cholangiocyte,0.0,0.0,0.0
+ionocyte/luminal epithelial cell of mammary gland,0.0,0.0,0.0
+keratinocyte,0.0,0.0,9.448214515633895e-19
+kidney epithelial cell,0.0,0.0,0.017188961405975874
+luminal cell of prostate epithelium,0.0,0.0,0.0
+medullary thymic epithelial cell,0.0,0.0,0.0
+mucus secreting cell/secretory cell/tracheal goblet cell,0.0,0.0,0.0
+pancreatic acinar cell,0.0,0.0,0.0
+pancreatic alpha cell/pancreatic beta cell,0.0,0.0,0.0
+pancreatic delta cell,0.03716030106490457,0.036649921354060394,0.032606262112312046
+pancreatic ductal cell,0.0,0.0,0.0
+pancreatic pp cell,0.0,0.0,0.0
+pulmonary ionocyte,0.0,0.0,0.0
+respiratory goblet cell/respiratory mucous cell/serous cell of epithelium of trachea,0.0,0.0,0.0
+salivary gland cell,0.0,0.0,0.0
+type ii pneumocyte,0.0,0.0,0.0
+b cell,0.0,0.0,0.0
+basophil,0.025905593011580384,0.023754493329863135,0.01442227208376793
+erythrocyte/erythroid progenitor,0.0,0.0,0.003857734420829472
+hematopoietic stem cell,0.09299063027547196,0.09252129751050012,0.09428349033853199
+innate lymphoid cell,0.0,0.0,0.0
+macrophage,0.14195760652574757,0.14103906885052842,0.12807657560449498
+mast cell,0.060214354478472024,0.058828905280001516,0.05301758638694962
+mature conventional dendritic cell,0.0024040938632715705,0.0018217766927885429,0.01766868299083826
+monocyte,0.18497719424342113,0.18632450774765946,0.166075324972405
+myeloid progenitor,0.0,0.0,0.0
+neutrophil,0.17834178245303714,0.17991193255061258,0.15782204371536843
+nk cell,0.17578295357770657,0.17685733057084055,0.15534475917327134
+plasma cell,0.0,0.0,0.0
+plasmablast,0.0,0.0,0.0
+platelet,0.0,0.0,0.0
+t cell,0.0,0.0,0.0
+thymocyte,0.0,0.0,0.0
+endothelial cell,0.09247979844443219,0.0944329942413063,0.08159750449342311
+r,0.9174671896403,0.8918224005415469,0.8547793042243234
+rmse,0.4190492089306292,0.4641718636958283,0.5379520514137258

@@ -1,0 +1,433 @@
+Performing nu-SVR
+nu = 0.05
+C = 0.1
+done fitting -- total fit time was 0.0032944679260253906
+sampName in nuSVR sample2
+rmse = 0.4641718636958283
+nu = 0.1
+C = 0.1
+done fitting -- total fit time was 0.0031366348266601562
+sampName in nuSVR sample2
+rmse = 0.4962115499719977
+nu = 0.15
+C = 0.1
+done fitting -- total fit time was 0.0031502246856689453
+sampName in nuSVR sample2
+rmse = 0.5431617733693711
+nu = 0.25
+C = 0.1
+done fitting -- total fit time was 0.0031342506408691406
+sampName in nuSVR sample2
+rmse = 0.5430701628761146
+nu = 0.5
+C = 0.1
+done fitting -- total fit time was 0.0031213760375976562
+sampName in nuSVR sample2
+rmse = 0.5431574181668907
+nu = 0.6
+C = 0.1
+done fitting -- total fit time was 0.005841255187988281
+sampName in nuSVR sample2
+rmse = 0.5431305046585455
+nu = 0.75
+C = 0.1
+done fitting -- total fit time was 0.004434347152709961
+sampName in nuSVR sample2
+rmse = 0.5432296817443023
+nu = 0.8
+C = 0.1
+done fitting -- total fit time was 0.003942251205444336
+sampName in nuSVR sample2
+rmse = 0.543249179255273
+nu = 0.85
+C = 0.1
+done fitting -- total fit time was 0.004047393798828125
+sampName in nuSVR sample2
+rmse = 0.543249179255273
+nu = 0.05
+C = 0.25
+done fitting -- total fit time was 0.0035059452056884766
+sampName in nuSVR sample2
+rmse = 0.5337957986137429
+nu = 0.1
+C = 0.25
+done fitting -- total fit time was 0.004565715789794922
+sampName in nuSVR sample2
+rmse = 0.5431617733693711
+nu = 0.15
+C = 0.25
+done fitting -- total fit time was 0.005277872085571289
+sampName in nuSVR sample2
+rmse = 0.5431617733693711
+nu = 0.25
+C = 0.25
+done fitting -- total fit time was 0.00383758544921875
+sampName in nuSVR sample2
+rmse = 0.5430701628761148
+nu = 0.5
+C = 0.25
+done fitting -- total fit time was 0.0032739639282226562
+sampName in nuSVR sample2
+rmse = 0.5431574181668906
+nu = 0.6
+C = 0.25
+done fitting -- total fit time was 0.005768299102783203
+sampName in nuSVR sample2
+rmse = 0.5432541849867326
+nu = 0.75
+C = 0.25
+done fitting -- total fit time was 0.004497528076171875
+sampName in nuSVR sample2
+rmse = 0.5432296817443021
+nu = 0.8
+C = 0.25
+done fitting -- total fit time was 0.0060007572174072266
+sampName in nuSVR sample2
+rmse = 0.5432491792552729
+nu = 0.85
+C = 0.25
+done fitting -- total fit time was 0.00417637825012207
+sampName in nuSVR sample2
+rmse = 0.5432491792552734
+nu = 0.05
+C = 0.5
+done fitting -- total fit time was 0.0046389102935791016
+sampName in nuSVR sample2
+rmse = 0.5431617733693711
+nu = 0.1
+C = 0.5
+done fitting -- total fit time was 0.004014730453491211
+sampName in nuSVR sample2
+rmse = 0.543161773369371
+nu = 0.15
+C = 0.5
+done fitting -- total fit time was 0.005497932434082031
+sampName in nuSVR sample2
+rmse = 0.5431617733693711
+nu = 0.25
+C = 0.5
+done fitting -- total fit time was 0.0038573741912841797
+sampName in nuSVR sample2
+rmse = 0.5430701628761145
+nu = 0.5
+C = 0.5
+done fitting -- total fit time was 0.005600929260253906
+sampName in nuSVR sample2
+rmse = 0.5431574181668907
+nu = 0.6
+C = 0.5
+done fitting -- total fit time was 0.006170511245727539
+sampName in nuSVR sample2
+rmse = 0.5432093347369417
+nu = 0.75
+C = 0.5
+done fitting -- total fit time was 0.0055999755859375
+sampName in nuSVR sample2
+rmse = 0.5432296817443021
+nu = 0.8
+C = 0.5
+done fitting -- total fit time was 0.005251407623291016
+sampName in nuSVR sample2
+rmse = 0.5432491792552727
+nu = 0.85
+C = 0.5
+done fitting -- total fit time was 0.004695415496826172
+sampName in nuSVR sample2
+rmse = 0.5432491792552729
+nu = 0.05
+C = 0.75
+done fitting -- total fit time was 0.00408935546875
+sampName in nuSVR sample2
+rmse = 0.5431617733693711
+nu = 0.1
+C = 0.75
+done fitting -- total fit time was 0.0035789012908935547
+sampName in nuSVR sample2
+rmse = 0.5431617733693711
+nu = 0.15
+C = 0.75
+done fitting -- total fit time was 0.005145072937011719
+sampName in nuSVR sample2
+rmse = 0.5431617733693708
+nu = 0.25
+C = 0.75
+done fitting -- total fit time was 0.004849433898925781
+sampName in nuSVR sample2
+rmse = 0.5430701628761144
+nu = 0.5
+C = 0.75
+done fitting -- total fit time was 0.0040781497955322266
+sampName in nuSVR sample2
+rmse = 0.5431574181668902
+nu = 0.6
+C = 0.75
+done fitting -- total fit time was 0.0034987926483154297
+sampName in nuSVR sample2
+rmse = 0.5431574181668898
+nu = 0.75
+C = 0.75
+done fitting -- total fit time was 0.004736185073852539
+sampName in nuSVR sample2
+rmse = 0.5432296817443008
+nu = 0.8
+C = 0.75
+done fitting -- total fit time was 0.0038917064666748047
+sampName in nuSVR sample2
+rmse = 0.5432491792552732
+nu = 0.85
+C = 0.75
+done fitting -- total fit time was 0.0033402442932128906
+sampName in nuSVR sample2
+rmse = 0.5432491792552725
+nu = 0.05
+C = 1
+done fitting -- total fit time was 0.004629373550415039
+sampName in nuSVR sample2
+rmse = 0.543161773369371
+nu = 0.1
+C = 1
+done fitting -- total fit time was 0.004076242446899414
+sampName in nuSVR sample2
+rmse = 0.5431617733693708
+nu = 0.15
+C = 1
+done fitting -- total fit time was 0.005040168762207031
+sampName in nuSVR sample2
+rmse = 0.5431617733693709
+nu = 0.25
+C = 1
+done fitting -- total fit time was 0.003754138946533203
+sampName in nuSVR sample2
+rmse = 0.5430701628761149
+nu = 0.5
+C = 1
+done fitting -- total fit time was 0.0032684803009033203
+sampName in nuSVR sample2
+rmse = 0.5431574181668908
+nu = 0.6
+C = 1
+done fitting -- total fit time was 0.004244565963745117
+sampName in nuSVR sample2
+rmse = 0.5431574181668904
+nu = 0.75
+C = 1
+done fitting -- total fit time was 0.0059969425201416016
+sampName in nuSVR sample2
+rmse = 0.5432296817443024
+nu = 0.8
+C = 1
+done fitting -- total fit time was 0.004080295562744141
+sampName in nuSVR sample2
+rmse = 0.5432491792552722
+nu = 0.85
+C = 1
+done fitting -- total fit time was 0.0032253265380859375
+sampName in nuSVR sample2
+rmse = 0.5432491792552724
+nu = 0.05
+C = 10
+done fitting -- total fit time was 0.005655527114868164
+sampName in nuSVR sample2
+rmse = 0.5431617733693687
+nu = 0.1
+C = 10
+done fitting -- total fit time was 0.005586147308349609
+sampName in nuSVR sample2
+rmse = 0.5431617733693708
+nu = 0.15
+C = 10
+done fitting -- total fit time was 0.0041124820709228516
+sampName in nuSVR sample2
+rmse = 0.5431617733693824
+nu = 0.25
+C = 10
+done fitting -- total fit time was 0.005005598068237305
+sampName in nuSVR sample2
+rmse = 0.5430701628761149
+nu = 0.5
+C = 10
+done fitting -- total fit time was 0.004089832305908203
+sampName in nuSVR sample2
+rmse = 0.5431574181668926
+nu = 0.6
+C = 10
+done fitting -- total fit time was 0.0034258365631103516
+sampName in nuSVR sample2
+rmse = 0.543157418166897
+nu = 0.75
+C = 10
+done fitting -- total fit time was 0.004498004913330078
+sampName in nuSVR sample2
+rmse = 0.5432296817443052
+nu = 0.8
+C = 10
+done fitting -- total fit time was 0.0036134719848632812
+sampName in nuSVR sample2
+rmse = 0.5432491792552858
+nu = 0.85
+C = 10
+done fitting -- total fit time was 0.004197835922241211
+sampName in nuSVR sample2
+rmse = 0.5432491792552799
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
+srrName =  sample2-NUSVR
+sample2-NUSVR
+dict_keys(['sample2'])
