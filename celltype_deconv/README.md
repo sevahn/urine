@@ -1,4 +1,4 @@
-# cellfracker ⛏
+# Cell Type Deconvolution ⛏
 
 To deconvolve samples:
 1. Conda environment
